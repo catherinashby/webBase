@@ -1,0 +1,39 @@
+{% load i18n staticfiles %}
+<!DOCTYPE html>
+{% get_current_language as LANGUAGE_CODE %}
+<html lang="{{ LANGUAGE_CODE|default:'en-us' }}">
+<!-- TEMPLATE: {% template_filename %} -->
+{% firstof notAcontextVariable "web Base" as site_name %}
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="content-script-type" content="text/javascript" />
+  <meta http-equiv="content-language" content="en">
+  <meta http-equiv="cache-control" content="no-cache" />
+  <meta http-equiv="Pragma" content="no-cache" />
+  <meta http-equiv="Expires" content="-1" />
+  <title>{% block title %}{{ site_name }}{% endblock %}</title>
+  <link rel="stylesheet" type="text/css" href="{% static 'common/css/minimum.css' %}" />
+  <link rel="stylesheet" type="text/css" href="{% static 'common/css/style.css' %}" />
+  <style type="text/css" >{% block styles %}{% endblock %}</style>
+  <script src="{% static 'common/js/classList.js' %}"></script>
+  <script src="{% static 'common/js/starter.js' %}"></script>
+  {% block scripts %}{% endblock %}
+</head>
+<body>
+  <header class="group">{% block header %}
+    <div class="personalization">{% block personalization %}
+    <div>{% if request.user.id %}<label>Logged In As:</label>{% endif %}
+    <span class="firstname">{{ request.user.first_name }}</span>
+    <span class="lastname">{{ request.user.last_name }}</span></div>
+    <div class="logger">{% if request.user.id %}
+    <a>Log Out</a>{% else %}<a>Log In</a>
+    {% endif %}</div>
+    {% endblock %}</div>
+    <div class="branding">{% block branding %}
+    <span class="icon" >&#8251;</span><span class="text">{{site_name}}</span>
+    {% endblock %}</div>
+  {% endblock %}</header>
+  <main>{% block contents %}{% endblock %}</main>
+  <footer>{% block footer %}{% endblock %}</footer>
+</body>
+</html>
