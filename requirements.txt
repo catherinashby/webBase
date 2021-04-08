@@ -1,4 +1,4 @@
 
 coverage==5.2.1
-Django==3.1
+Django==3.1.8
 restless==2.1.1
