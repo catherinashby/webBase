@@ -28,6 +28,7 @@ DEBUG = False
 # Application definition
 
 INSTALLED_APPS = [
+    'accounts.apps.AccountsConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -84,7 +85,7 @@ DATABASES = {
     }
 }
 
-# AUTH_USER_MODEL = 'core.User'
+AUTH_USER_MODEL = 'accounts.User'
 # LOGIN_URL = '/paths/'
 # LOGIN_REDIRECT_URL = '/'
 # LOGOUT_REDIRECT_URL = '/'
