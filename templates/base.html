@@ -22,7 +22,7 @@
     <div class="personalization">{% block personalization %}
     {% if request %}
       {% if request.user.is_anonymous %}
-        <a href="{# url 'log_in' #}" title="Enter">
+        <a href="{% url 'log_in' %}" title="Enter">
           <span class="icon">&#9094;</span>
         </a>{% else %}
         <a id="user_menu" class="pointer">
@@ -31,14 +31,14 @@
         <ul class="hidden">{% if request.user.is_staff %}
           <li><a href="/admin/">Admin</a></li>{% endif %}
           {% if not pg_name == 'profile' %}<li>
-            <a href="{# url 'profilePlus' #}">Profile</a></li>{% endif %}
-          <li><a href="{# url 'logout' #}">Log Out</a></li>
+            <a href="{% url 'profile' %}">Profile</a></li>{% endif %}
+          <li><a href="{% url 'logout' %}">Log Out</a></li>
         </ul>
       {% endif %}
     {% endif %}
     {% endblock personalization %}</div>
     <div class="branding">{% block branding %}
-      <a class="iblk" href="{# url 'index' #}" title="Home">
+      <a class="iblk" href="{% url 'home' %}" title="Home">
         <span class="icon">{{ logo }}</span>
       </a>
       <span class="text">{{ site_name }}</span>

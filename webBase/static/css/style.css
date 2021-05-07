@@ -32,20 +32,40 @@
 
 /* the Base Template */
 html,
-body	{ position: relative; min-height:100%; }
-footer	{ /* border-top: thin solid green; border-bottom: thin solid red; */
-	width: 100%; position: absolute; bottom: 0; left: 0; }
+body	{ position: relative; height: 100%; }
+footer	{ position: absolute; bottom: 0; left: 0; width: 100%; }
 header div.branding span.icon	{
-			display: inline-block; font-size: xx-large;
-			padding: 0.25em; margin: 0.25em;
-			}
-header div.branding span.text	{ font-size: x-large; font-weight: 700; }
+        display: inline-block; font-size: xx-large;
+        padding: 0.25em; margin: 0.25em;
+        }
+header div.branding span.text	{
+        font-size: x-large; font-weight: 700;
+        }
 header div.personalization		{
-			float: right; line-height: 1.5;
-			padding: 0.5em; margin: 0 1em;
-			}
-@media(max-width:768px)	{
-	header div.personalization	label	{ display: none; }
-}
-header div.personalization span.firstname	{ display: inline-block; }
-header div.personalization div.logger	{ float: right; }
+        float: right; line-height: 1.5;
+        padding: 0.5em; margin: 0 1em;
+        }
+header div.personalization a	{
+        text-decoration: none;
+        }
+header div.personalization span.icon	{
+        font-size: 24pt;
+        }
+header div.personalization span.superstaff   {
+        background-color: #98fb98; /* Pale Green */
+        }
+header div.personalization span.super  {
+        background-color: #b0c4de; /* Light Steel Blue */
+        }
+header div.personalization span.staff   {
+        background-color: #eedd82; /* Light Goldenrod */
+        }
+header div.personalization span.ident   {
+        padding: 0.5em; border-radius: 1em;
+        border: thin solid lightgray;
+        }
+header div.personalization ul {
+        position: absolute; right: 1vw;
+        padding: 1vh 1vw; margin-top: 2vh;
+        background-color: #f5f5dc; /* Beige */
+        }

@@ -1,5 +1,19 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 
-def frontpage(request):
-    context = { 'request': request }
-    return render( request, 'frontpage.html', context )
+
+def home(request):
+    context = {'request': request}
+    if not request.user.is_authenticated:
+        return redirect('index')
+
+    template = 'homepage.html'
+    return render(request, template, context)
+
+
+def index(request):
+    context = {'request': request}
+    if request.user.is_authenticated:
+        return redirect('home')
+
+    template = 'frontpage.html'
+    return render(request, template, context)

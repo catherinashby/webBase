@@ -1,39 +1,19 @@
 {% extends "base.html" %}
   {% block styles %}
-  .center	{ text-align: center; margin 25% 0; }
     main    {
-            background-color: #f8f8ff; /* Ghost White */
-            }
-    .box    {
-            border: thin solid aqua;
-            }
-    .square {
-            border: thin solid blue;
-            position: relative;
-            display: inline-block;
-            width: 100px;
-            aspect-ratio: 1/1;
-            margin: 1vh 1vw;
+        background-color: #f8f8ff; /* Ghost White */
         }
-    .content {
-            border: thin solid yellow;
-            position: absolute;
-            top: 50%; left: 50%;
-            transform: translate(-50%, -50%);
-            background-color: #fffaf0; /* Floral White */
+    main div	{
+        margin-top: 45%;
+        text-align: center;
+        }
+    footer div {
+        text-align: center;
         }
   {% endblock %}
   {% block contents %}
-    <!-- div class="center">This page intentionally left blank.</div -->
-    <div class="box">
-      <div class="square"><div class="content">1:1</div></div>
-      <div class="square"><div class="content">1:1</div></div>
-      <div class="square"><div class="content">1:1</div></div>
-      <div class="square"><div class="content">1:1</div></div>
-      <div class="square"><div class="content">1:1</div></div>
-      <div class="square"><div class="content">1:1</div></div>
-      <div class="square"><div class="content">1:1</div></div>
-      <div class="square"><div class="content">1:1</div></div>
-      <div class="square"><div class="content">1:1</div></div>
-    </div>
+    <div>Welcome to my world.</div>
+  {% endblock %}
+  {% block footer %}
+    <div>This space intentionally left blank.</div>
   {% endblock %}
