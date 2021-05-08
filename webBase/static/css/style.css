@@ -68,4 +68,5 @@ header div.personalization ul {
         position: absolute; right: 1vw;
         padding: 1vh 1vw; margin-top: 2vh;
         background-color: #f5f5dc; /* Beige */
+        z-index: 9;
         }

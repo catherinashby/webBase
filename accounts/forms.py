@@ -1,8 +1,9 @@
 from datetime import datetime
 
 from django.contrib.auth.forms import UserCreationForm
+from django.forms import ModelForm
 
-from .models import User
+from .models import User, UserProfile
 
 
 class CustomUserCreationForm(UserCreationForm):
@@ -22,3 +23,17 @@ class CustomUserCreationForm(UserCreationForm):
         if commit:
             user.save()
         return user
+
+
+class UserForm(ModelForm):
+
+    class Meta:
+        model = User
+        fields = ['first_name', 'last_name', 'email']
+
+
+class ProfileForm(ModelForm):
+
+    class Meta:
+        model = UserProfile
+        exclude = ['user']

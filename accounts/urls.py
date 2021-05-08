@@ -22,10 +22,7 @@ urlpatterns = [
     #         name='threshold'),
     #    path('ingress/', views.PasswordView.as_view(), name='ingress'),
     #
-    #    path('profile/', views.ProfileView.as_view(), name='profile')
-    path('profile/',
-         TemplateView.as_view(template_name="success.html"),
-         name='profile'),
+    path('profile/', views.ProfileView.as_view(), name='profile')
 ]
 #
 level = getattr(settings, 'LOG_IN_PAGE', 'entrance')

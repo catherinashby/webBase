@@ -34,7 +34,7 @@ class ViewsTest(TestCase):
         response = self.client.get(self.home_url)
         self.assertEqual(response.status_code, 302)
         self.assertEqual(response.url, self.root_url,
-                         "home page should not be available without logging in")
+                         "home page shouldn't be available without logging in")
 
         self.client.force_login(self.usr)
         response = self.client.get(self.home_url)
