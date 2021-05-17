@@ -17,6 +17,16 @@ div.cpw a       { font-family: Arial; font-weight: 700; padding: 0.5em;
                   padding-right: 5px; text-align: right; }
 #formbox select { min-width: 148px; }
 {% endblock styles %}
+
+{% block scripts %}
+  <script>
+  document.addEventListener("DOMContentLoaded", function(){
+    // Handler when the DOM is fully loaded
+    document.getElementById("id_first_name").focus();
+ });
+  </script>
+{% endblock scripts %}
+
 {% block contents %}
     <div id="formbox">
       <div class="cpw">
