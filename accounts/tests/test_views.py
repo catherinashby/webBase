@@ -307,4 +307,3 @@ class PasswordViewTest(TestCase):
                          "returning user should redirect to root (home page)")
 
         return
-

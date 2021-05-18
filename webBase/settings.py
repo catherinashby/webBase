@@ -28,6 +28,7 @@ DEBUG = False
 # Application definition
 
 INSTALLED_APPS = [
+    'kernel.apps.KernelConfig',
     'accounts.apps.AccountsConfig',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -62,7 +63,7 @@ TEMPLATES = [
                 'django.contrib.messages.context_processors.messages',
             ],
             'builtins': [
-                'webBase.templatetags.base_tags'
+                'kernel.templatetags.base_tags'
             ],  # noqa
         },
     },
@@ -132,7 +133,7 @@ SESSION_EXPIRE_AT_BROWSER_CLOSE = True
 STATIC_URL = '/static/'
 
 STATICFILES_DIRS = [
-    ('common', Path(BASE_DIR).joinpath('webBase/static')),
+    ('common', Path(BASE_DIR).joinpath('kernel/static')),
 ]
 
 # Default primary key field type
